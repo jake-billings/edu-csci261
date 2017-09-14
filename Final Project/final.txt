@@ -1,0 +1,18 @@
+Final Project DescriptionTitleText Recognition CSCI261FProblem Description	One common problem in computing is recognizing text from an image file.  Text can be stored in a very efficiently by storing letters using an encoding such as ASCII and converting it to an image using a font when it needs to be displayed to a user.  However, sometimes text is found in images, where each pixel of the rendered text must be stored.  A text recognition algorithm converts text in an image into encoded text.  Text recognition algorithms can have many practical purposes.  For instance, text recognition can save storage by compressing images of text.  They could also be used to read signs in a self-driving car.  Google uses them to scan books into Google Books.  Text recognition can lay the groundwork for much larger and very useful applications.Program Documentation
+	In order to setup for the program, place an image of the alphabet in your chosen font at data/Font.png and the space-delimited transcript of that image at data/Font.txt.  Then place your input image at data/Input.png. Ensure that both image files are a single line of text.  Otherwise, the program will be unable to recognize letters.  Monospace fonts work better than other fonts because the boundaries of letters do not overlap.  Times New Roman has to be modified slightly before it can run properly; however, Andale Mono works very well.
+
+	Then, when the program is run, an SFML window will show all recognized letters on black and white images of the text as well as original versions of the text.  The recognized text will be printed to the console without spaces.
+
+	The program is currently configured to run using sample input data.
+
+	If I had more time, I would have added the ability to compare to multiple fonts, so that input data could be passed to the program in multiple fonts.
+
+Tests
+	No font image is provided -> an error will be printed to the console, and the program will terminate.
+	No font text is provided -> an error will be printed to the console, and the program will terminate.
+	No input image is provided -> an error will be printed to the console, and the program will terminate.
+	Text image is provided in color -> If the grayscale value of the text is above 90, the text will be processed as normal; otherwise, it will be discarded as background.
+	Letter boundaries overlap -> The overlapping letters will be interpreted as one letter and yield a likely nonsensical recognized letter
+
+Reflection
+	Throughout this project, I learned about details of text in computing and about program architecture.  For instance, in the screenshots of text I took from Microsoft Word running on Mac OS X, there were additional red pixels on the left and blue on the right of black text.  I would hypothesize this has something to do with font smoothing; however it complicated the process of separating letters because they would sometimes cause the bounds of letters to overlap.  Additionally, even without font smoothing, the boundaries letters in Times New Roman would overlap.  I never realized this before. I also learned that abstract functions such as matrix operations should be separated from more specific code first rather than at the end of the development process.  It was difficult to extract and generalize the matrix operations.  Additionally, I learned how closely mathematics and computer science are tied together because matrices were very useful for image processing.  Overall, I learned both specifics relating to text recognition and general rules of computer programming.
